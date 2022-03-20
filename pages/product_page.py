@@ -23,7 +23,6 @@ class ProductPage(BasePage):
     def add_product_to_basket_with_quiz(self):
         book_price = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE).text
         book_name = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME).text
-
         WebDriverWait(self.browser, 5).until(
             ec.element_to_be_clickable(ProductPageLocators.ADD_TO_BASKET)).click()
         self.solve_quiz_and_get_code()
